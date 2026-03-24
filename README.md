@@ -1,5 +1,5 @@
 # Attack-Simulation---Opnsense
-In this project I will be doing a exploit of my Windows 10 virtual machine using remote desktop protocol and a brute force attack.
+Simulated an RDP brute-force attack from a Kali Linux machine in the DMZ targeting a segmented Windows host. Multiple failed authentication attempts (Event ID 4625) were generated and successfully detected in Wazuh using Windows Security logs and Sysmon telemetry.
 
 First I will be installing Sysmon onto my Windows 10 virtual machine. I will be doing this because it provides deeper endpoint visibility. To download Sysmon search Sysmon and download it from the offical Microsoft website. 
 
