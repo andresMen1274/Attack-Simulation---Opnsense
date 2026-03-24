@@ -30,3 +30,5 @@ Now we want to inspect whether or not logs are being forwarded to Wazuh. Login t
 These configuartions will act like an EDR for our endpoint systems. I made this decision because IDS have become less reliable beacuse of encrypted traffic, but are still useful. Therefore, I will not only use EDR for endpoint defense, but also conifgure suricata rules for network defense.
 
 Now I will simulate a brute force attack using Windows Remote Desktop Protocol and collecting logs of the attack.
+
+To do this first opent the kali linux virtual machine. Open the terminal to enter the command sudo apt-get update && sudo apt-get upgrade -y. 
