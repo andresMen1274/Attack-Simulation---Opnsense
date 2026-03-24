@@ -27,4 +27,6 @@ Now we want to inspect whether or not logs are being forwarded to Wazuh. Login t
 
 <img width="1548" height="752" alt="image" src="https://github.com/user-attachments/assets/b335e170-dada-4b99-afc9-ca0ea233a73a" />
 
+These configuartions will act like an EDR for our endpoint systems. I made this decision because IDS have become less reliable beacuse of encrypted traffic, but are still useful. Therefore, I will not only use EDR for endpoint defense, but also conifgure suricata rules for network defense.
 
+Now I will simulate a brute force attack using Windows Remote Desktop Protocol and collecting logs of the attack.
