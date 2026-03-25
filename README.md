@@ -31,4 +31,12 @@ These configuartions will act like an EDR for our endpoint systems. I made this 
 
 Now I will simulate a brute force attack using Windows Remote Desktop Protocol and collecting logs of the attack.
 
-To do this first opent the kali linux virtual machine. Open the terminal to enter the command sudo apt-get update && sudo apt-get upgrade -y. After it has finished downloading create a directory with the command mkdir <Directory_Name>. We will download crowbar onto the Kali Linux machine to do this enter the command sudo apt-get install -y crowbar. 
+To do this first opent the kali linux virtual machine. Open the terminal to enter the command sudo apt-get update && sudo apt-get upgrade -y. After it has finished downloading create a directory with the command mkdir <Directory_Name>. We will download crowbar onto the Kali Linux machine to do this enter the command sudo apt-get install -y crowbar. Cd into the /usr/share/wordlists/ directory to find the Rockyou.txt file and unzip it with gunzip.
+
+<img width="562" height="325" alt="image" src="https://github.com/user-attachments/assets/90ad5e99-a9c2-420b-8b53-6673aca3b340" />
+
+Then copy the rockyou.txt file to the ad-project directory. Enter the directory and use the command head -n 20 rockyou.txt > passwords.txt. Then nano the passwords.txt to add the password of the jsmith user. Next save the file and navigate to the Winodws 10 virtual machine. Search This PC -> properties -> advanced system settings -> remote -> allow remote connections to this computer -> select users. After this is done enter the command hydra -l jsmith -P passwords.txt rdp://10.200.10.10. 
+
+<img width="630" height="346" alt="image" src="https://github.com/user-attachments/assets/e3cc7501-3cdd-4fc3-9760-602afe55a4ef" />
+
+This confirms success and that the user system has now been comprimised. Now I will like to look at the logs generated as a result of this. 
