@@ -31,4 +31,4 @@ These configuartions will act like an EDR for our endpoint systems. I made this 
 
 Now I will simulate a brute force attack using Windows Remote Desktop Protocol and collecting logs of the attack.
 
-To do this first opent the kali linux virtual machine. Open the terminal to enter the command sudo apt-get update && sudo apt-get upgrade -y. 
+To do this first opent the kali linux virtual machine. Open the terminal to enter the command sudo apt-get update && sudo apt-get upgrade -y. After it has finished downloading create a directory with the command mkdir <Directory_Name>. We will download crowbar onto the Kali Linux machine to do this enter the command sudo apt-get install -y crowbar. 
