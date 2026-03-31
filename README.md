@@ -39,4 +39,16 @@ Then copy the rockyou.txt file to the ad-project directory. Enter the directory 
 
 <img width="630" height="346" alt="image" src="https://github.com/user-attachments/assets/e3cc7501-3cdd-4fc3-9760-602afe55a4ef" />
 
-This confirms success and that the user system has now been comprimised. Now I will like to look at the logs generated as a result of this. 
+This confirms success and that the user system has now been comprimised. Now I will like to look at the logs generated as a result of this. Login to the Wazuh dashboard and enter the credintals. Select Modiules -> security Events and enter the number 4625(this number correlates to failed login attempts). 
+
+<img width="1047" height="535" alt="image" src="https://github.com/user-attachments/assets/918492ba-a63c-42ea-8af2-c8db87b0f1e4" />
+
+Open the log to see more detailed information about how the attempt.
+
+<img width="692" height="761" alt="image" src="https://github.com/user-attachments/assets/452896e0-2d4c-4d76-9825-835f14028d49" />
+
+<img width="820" height="698" alt="image" src="https://github.com/user-attachments/assets/4b3b2513-ff99-4177-95b1-220bc340cf32" />
+
+<img width="1652" height="742" alt="image" src="https://github.com/user-attachments/assets/e900c466-c329-4558-b71a-7d94a9359106" />
+
+From the information given we can see the IP address of the Kali Linux machine and the fail login attempts.
